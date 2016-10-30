@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var obj1 = {
+        a : 1,
+        getA: function () {
+            alert(this.a);
+        }
+    }
+//    var obj2 = new Object();
+//    obj2.a = 2;
+//    obj2.getA = function () {
+//        alert(this.a)
+//    }
+    obj1.getA();
+//    obj2.getA();
+    //2.作为普通函数调用//
+    /*for(var a in window){
+        console.log(a);
+    }*/
+  /*  window.name = "globaName";
+    var getName = function () {
+        return this.name;
+    }
+    console.log(getName());*/
+
+
+  /*  window.name = "globalName";
+    var myObject = {
+        name : "lxj",
+        getName : function () {
+            return this.name;
+        }
+    }
+    var getName = myObject.getName;
+    console.log(getName());
+    console.log(window.getName());
+    console.log(myObject.getName());*/
+
+
+    //3.构造器调用//
+  /*  var MyClass = function () {
+        this.name = "sx";
+    }
+    var w = new MyClass();
+    console.log(w.name);*/
+
+
+   /* var MyClass2 = function () {
+        this.name = "sx";
+        return {
+            name: "ks",
+        }
+    }
+    var w = new MyClass2();
+    console.log(w.name);*/
+
+    /*var MyClass3 = function () {
+        this.name = "jyz";
+        return "dfdsaf";
+    }
+    var obj = new MyClass3();
+    console.log(obj.name);*/
+
+    //4//
+    var obj1 = {
+        name:"wxy",
+        getName: function(){
+            return this.name;
+        }
+    }
+    var obj2 = {
+        name: "swl"
+    }
+    console.log(obj1.getName());
+    console.log(obj1.getName.call(obj2));
+    console.log(obj1.getName.apply(obj2));
+
+//5//
+    var obj = {
+        myName : "wxy",
+        getName: function () {
+            return this.myName;
+        }
+    }
+    var getName2 = obj.getName;
+    console.log(getName2());
+</script>
+</body>
+</html>
